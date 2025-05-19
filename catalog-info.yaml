@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: jon32m56r-nodejs-gitops
+  description: This is GitOps manifest for jon32m56r-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=jon32m56r-nodejs
+    backstage.io/kubernetes-id: jon32m56r-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: jon32m56r-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:jon32m56r-nodejs
